@@ -1,7 +1,7 @@
 {
-  "name": "kennelmate-react-slingshot",
-  "version": "0.1.0",
-  "description": "Kennelmate",
+  "name": "react-slingshot",
+  "version": "5.0.0",
+  "description": "Starter kit for creating apps with React and Redux",
   "engines": {
     "npm": ">=3"
   },
@@ -26,7 +26,7 @@
     "test:watch": "npm run test -- --watch",
     "open:cover": "npm run test:cover && open coverage/index.html"
   },
-  "author": "Madsn&Thisen",
+  "author": "Cory House",
   "license": "MIT",
   "dependencies": {
     "object-assign": "4.1.0",
@@ -69,6 +69,7 @@
     "html-webpack-plugin": "2.22.0",
     "isparta": "4.0.0",
     "mocha": "3.0.1",
+    "mockdate": "1.0.4",
     "node-sass": "3.8.0",
     "npm-run-all": "2.3.0",
     "open": "0.0.5",
@@ -88,9 +89,23 @@
     "webpack-hot-middleware": "2.12.2",
     "webpack-md5-hash": "0.0.5"
   },
-  "keywords": [],
+  "keywords": [
+    "react",
+    "reactjs",
+    "react-router",
+    "hot",
+    "reload",
+    "hmr",
+    "live",
+    "edit",
+    "webpack",
+    "redux",
+    "flux",
+    "boilerplate",
+    "starter"
+  ],
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/coryhouse/react-slingshot"
   }
 }
