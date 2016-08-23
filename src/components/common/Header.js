@@ -3,8 +3,13 @@ import {Link, IndexLink} from 'react-router';
 
 const Header = () => {
   return (
-    <nav>
-      <IndexLink to="/" activeClassName="active">Home</IndexLink>
+    <nav className="navbar navbar-default navbar-static-top">
+      <div className="container-fluid">
+        <ul className="nav navbar-nav">
+          <li><a><IndexLink to="/" activeClassName="active">Home</IndexLink></a></li>
+          <li><a>Bla bla</a></li>
+        </ul>
+      </div>
     </nav>
   );
 };

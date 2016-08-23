@@ -2,8 +2,9 @@ import React from 'react';
 
 const HomePage = () => {
   return (
-    <div>
+    <div className="jumbotron">
       <h1>KennelMate ftw</h1>
+      <p>Bootstrap ftw</p>
     </div>
   );
 };
