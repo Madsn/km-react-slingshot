@@ -83,12 +83,12 @@ class BookingApi {
           booking.id = generateId();
           bookings.push(booking);
         }
-      })
+      });
     });
   }
 
   static deleteBooking(bookingId) {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
       setTimeout(() => {
         const indexOfBookingToDelete = bookings.findIndex(booking => {
           bookingId == booking.id;

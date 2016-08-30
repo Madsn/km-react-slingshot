@@ -3,9 +3,11 @@ import { Route, IndexRoute } from 'react-router';
 
 import App from './components/App';
 import HomePage from './components/HomePage';
+import DashboardPage from './components/dashboard/DashboardPage';
 
 export default (
   <Route path="/" component={App}>
     <IndexRoute component={HomePage}/>
+    <Route path="dashboard" component={DashboardPage}/>
   </Route>
 );
