@@ -2,14 +2,25 @@ import * as actionTypes from '../constants/actionTypes';
 import objectAssign from 'object-assign';
 import initialState from './initialState';
 
-export default function dashboardReducer(state = initialState.bookings, action) {
+export default function dashboardReducer(state = initialState.dashboard, action) {
+  let newState;
   switch (action.type) {
     case actionTypes.FETCHING_BOOKINGS:
-      return objectAssign({}, state, {loading: true, error: undefined});
+      newState = objectAssign({}, state);
+      newState.loading = true;
+      newState.error = undefined;
+      return newState;
     case actionTypes.RECEIVE_BOOKINGS:
-      return objectAssign({}, state, {bookings: action.bookings, loading: false, error: undefined});
+      newState = objectAssign({}, state);
+      newState.loading = false;
+      newState.bookings = action.bookings;
+      newState.error = undefined;
+      return newState;
     case actionTypes.API_ERROR:
-      return objectAssign({}, state, {loading: true, loading: false, error: action.error});
+      newState = objectAssign({}, state);
+      newState.loading = false;
+      newState.error = action.error;
+      return newState;
     default:
       return state;
   }
