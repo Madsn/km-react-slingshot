@@ -3,8 +3,8 @@ import DashboardActions from './DashboardActions';
 
 class DashboardTable extends React.Component {
 
-  constructor(props) {
-    super(props);
+  constructor(props, context) {
+    super(props, context);
   }
 
   render() {

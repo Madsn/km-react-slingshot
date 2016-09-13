@@ -23,7 +23,7 @@ const bookings = [
     status: "Layla!",
   },
   {
-    id: 2,
+    id: 4,
     category: "Turtle",
     customer: "Mathis Møller",
     details: "I like turtles",
@@ -58,6 +58,7 @@ const generateId = () => {
 
 class BookingApi {
   static getAllBookings() {
+    console.log('getAllBookings called');
     return new Promise((resolve) => {
       setTimeout(() => {
         resolve(Object.assign([], bookings));
