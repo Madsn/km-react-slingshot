@@ -8,7 +8,7 @@ class DashboardActions extends React.Component {
   render() {
     return (
       <div>
-        <span title="Edit booking" className="clickable glyphicon glyphicon-edit"></span>
+        <span title="Edit booking" className="clickable glyphicon glyphicon-edit"/>
       </div>
     );
   }

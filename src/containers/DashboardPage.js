@@ -15,7 +15,8 @@ export const DashboardPage = (props) => {
 };
 
 DashboardPage.propTypes = {
-  actions: PropTypes.object.isRequired
+  actions: PropTypes.object.isRequired,
+  bookings: PropTypes.array.isRequired
 };
 
 function mapStateToProps(state) {

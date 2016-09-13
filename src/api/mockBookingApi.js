@@ -58,7 +58,6 @@ const generateId = () => {
 
 class BookingApi {
   static getAllBookings() {
-    console.log('getAllBookings called');
     return new Promise((resolve) => {
       setTimeout(() => {
         resolve(Object.assign([], bookings));
