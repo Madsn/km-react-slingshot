@@ -1,12 +1,39 @@
 import * as types from '../constants/actionTypes';
+import BookingApi from '../api/mockBookingApi';
 
-export function getAllBookings(settings) {
+export function fetchBookings() {
   return function (dispatch) {
-    // thunks allow for pre-processing actions, calling apis, and dispatching multiple actions
-    // in this case at this point we could call a service that would persist the fuel savings
     return dispatch({
-      type: types.GET_ALL_BOOKINGS,
-      settings
+      type: types.FETCHING_BOOKINGS
+    });
+  };
+}
+
+export function receiveBookings(bookings) {
+  return function (dispatch) {
+    return dispatch({
+      type: types.RECEIVE_BOOKINGS,
+      bookings: bookings
+    });
+  };
+}
+
+export function errorFetchingBookings(error) {
+  return function (dispatch) {
+    return dispatch({
+      type: types.API_ERROR,
+      error: error
+    });
+  };
+}
+
+export function getAllBookings() {
+  return function (dispatch) {
+    dispatch(fetchBookings());
+    BookingApi.getAllBookings().then(function(bookings) {
+      dispatch(receiveBookings(bookings));
+    }, function(error) {
+      dispatch(errorFetchingBookings(error));
     });
   };
 }
