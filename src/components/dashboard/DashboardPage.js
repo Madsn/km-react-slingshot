@@ -9,7 +9,7 @@ class DashboardPage extends React.Component {
     super(props);
   }
 
-  componentDidMount() {
+  componentWillMount() {
     this.props.actions.getAllBookings();
   }
 
@@ -21,7 +21,7 @@ class DashboardPage extends React.Component {
       contents = (
         <div>
           <DashboardTable header="Due to Check in" rows={this.props.bookings}/>
-          <DashboardTable header = "Occupants" rows={this.props.bookings}/>
+          <DashboardTable header="Occupants" rows={this.props.bookings}/>
         </div>
       )
       ;

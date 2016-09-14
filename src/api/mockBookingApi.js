@@ -65,6 +65,14 @@ class BookingApi {
     });
   }
 
+  static getSingleBooking(bookingId) {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(Object.assign({}, bookings.find(function (o) { return o.id == bookingId; })));
+      }, delay);
+    });
+  }
+
   static saveBooking(booking) {
     booking = Object.assign({}, booking);
 
