@@ -1,6 +1,6 @@
 import initialState from './initialState';
 import objectAssign from 'object-assign';
-import {RECEIVE_SINGLE_BOOKING} from '../constants/actionTypes';
+import {RECEIVE_SINGLE_BOOKING} from '../actions/actionTypes';
 
 export default function bookingReducer(state = initialState.viewBooking, action) {
   let newState;

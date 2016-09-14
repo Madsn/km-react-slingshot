@@ -1,5 +1,5 @@
-import * as types from '../../constants/actionTypes';
-import BookingApi from '../../api/mockBookingApi';
+import * as types from './actionTypes';
+import BookingApi from '../api/mockBookingApi';
 
 export function receiveSingleBooking(booking) {
   return function (dispatch) {
@@ -13,7 +13,6 @@ export function receiveSingleBooking(booking) {
 export function fetchSingleBooking(bookingId) {
   return function (dispatch) {
     BookingApi.getSingleBooking(bookingId).then(function(booking) {
-      console.log(booking);
       dispatch(receiveSingleBooking(booking));
     }, function(error) {
       console.error(error);

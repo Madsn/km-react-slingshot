@@ -1,6 +1,6 @@
 import React, {PropTypes} from 'react';
 import {bindActionCreators} from 'redux';
-import * as actions from './ViewBookingActions';
+import * as actions from '../../actions/viewBookingActions';
 import {connect} from 'react-redux';
 
 class ViewBookingPage extends React.Component {
