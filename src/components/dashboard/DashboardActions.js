@@ -1,17 +1,39 @@
-import React from 'react';
+import * as types from '../../constants/actionTypes';
+import BookingApi from '../../api/mockBookingApi';
 
-class DashboardActions extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    return (
-      <div>
-        <span title="Edit booking" className="clickable glyphicon glyphicon-edit"/>
-      </div>
-    );
-  }
+export function fetchBookings() {
+  return function (dispatch) {
+    return dispatch({
+      type: types.FETCHING_BOOKINGS
+    });
+  };
 }
 
-export default DashboardActions;
+export function receiveBookings(bookings) {
+  return function (dispatch) {
+    return dispatch({
+      type: types.RECEIVE_BOOKINGS,
+      bookings: bookings
+    });
+  };
+}
+
+export function errorFetchingBookings(error) {
+  return function (dispatch) {
+    return dispatch({
+      type: types.API_ERROR,
+      error: error
+    });
+  };
+}
+
+export function getAllBookings() {
+  return function (dispatch) {
+    dispatch(fetchBookings());
+    BookingApi.getAllBookings().then(function(bookings) {
+      dispatch(receiveBookings(bookings));
+    }, function(error) {
+      dispatch(errorFetchingBookings(error));
+    });
+  };
+}

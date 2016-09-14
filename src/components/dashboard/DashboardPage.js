@@ -1,8 +1,8 @@
 import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import DashboardTable from '../components/dashboard/DashboardTable';
-import * as actions from '../actions/dashboardActions';
+import DashboardTable from './DashboardTable';
+import * as actions from './DashboardActions';
 
 class DashboardPage extends React.Component {
   constructor(props) {
