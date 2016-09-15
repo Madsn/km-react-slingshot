@@ -10,6 +10,7 @@ export default (
   <Route path="/" component={App}>
     <IndexRoute component={HomePage}/>
     <Route path="dashboard" component={DashboardPage}/>
+    <Route path="new-booking" component={DashboardPage}/>
     <Route path="bookings/:bookingId" component={ViewBookingPage}/>
   </Route>
 );
