@@ -1,5 +1,5 @@
-import * as types from '../../constants/actionTypes';
-import BookingApi from '../../api/mockBookingApi';
+import * as types from './actionTypes';
+import BookingApi from '../api/mockBookingApi';
 
 export function fetchBookings() {
   return function (dispatch) {

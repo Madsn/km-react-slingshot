@@ -1,4 +1,4 @@
-import * as actionTypes from '../constants/actionTypes';
+import * as actionTypes from '../actions/actionTypes';
 import objectAssign from 'object-assign';
 import initialState from './initialState';
 

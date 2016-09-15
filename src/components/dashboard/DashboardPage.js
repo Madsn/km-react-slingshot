@@ -2,14 +2,14 @@ import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import DashboardTable from './DashboardTable';
-import * as actions from './DashboardActions';
+import * as actions from '../../actions/dashboardActions';
 
 class DashboardPage extends React.Component {
   constructor(props) {
     super(props);
   }
 
-  componentDidMount() {
+  componentWillMount() {
     this.props.actions.getAllBookings();
   }
 
@@ -21,7 +21,7 @@ class DashboardPage extends React.Component {
       contents = (
         <div>
           <DashboardTable header="Due to Check in" rows={this.props.bookings}/>
-          <DashboardTable header = "Occupants" rows={this.props.bookings}/>
+          <DashboardTable header="Occupants" rows={this.props.bookings}/>
         </div>
       )
       ;
