@@ -1,50 +1,6 @@
 import delay from './delay';
-
-const bookings = [
-  {
-    id: 1,
-    category: "Dog",
-    customer: "John Papa",
-    details: "Masser af mad!",
-    status: "Nice status",
-  },
-  {
-    id: 2,
-    category: "Cat",
-    customer: "Mikkel Madsen",
-    details: "Miav!",
-    status: "No idea what status is"
-  },
-  {
-    id: 3,
-    category: "Dog",
-    customer: "Eric Clapton",
-    details: "It loves guitar solos",
-    status: "Layla!",
-  },
-  {
-    id: 4,
-    category: "Turtle",
-    customer: "Mathis Møller",
-    details: "I like turtles",
-    status: "TURTLE POWER",
-  },
-  {
-    id: 5,
-    category: "Donkey",
-    customer: "Cory house ",
-    details: "et Æææsel",
-    status: "Nice status",
-  },
-  {
-    id: 6,
-    category: "Dog",
-    customer: "Scott Hanselman",
-    details: "The dog is clean, like my code",
-    status: "No idea what status is"
-  }
-];
-
+import request from 'superagent';
+/*
 const generateId = () => {
   function s4() {
     return Math.floor((1 + Math.random()) * 0x10000)
@@ -54,12 +10,22 @@ const generateId = () => {
 
   return s4();
 };
+*/
 
 class BookingApi {
   static getAllBookings() {
     return new Promise((resolve) => {
       setTimeout(() => {
-        resolve(Object.assign([], bookings));
+        request.get('http://localhost:3333/getAllBookings')
+          .set('Accept', 'application/json')
+          .end(function(err, res) {
+            if (err) {
+              // Handle error
+              resolve(err);
+            } else {
+              resolve(res.body);
+            }
+          });
       }, delay);
     });
   }
@@ -67,11 +33,20 @@ class BookingApi {
   static getSingleBooking(bookingId) {
     return new Promise((resolve) => {
       setTimeout(() => {
-        resolve(Object.assign({}, bookings.find(function (o) { return o.id == bookingId; })));
+        request.get('http://localhost:3333/getSingleBooking/' + bookingId)
+          .set('Accept', 'application/json')
+          .end(function(err, res) {
+            if (err) {
+              // Handle error
+              resolve(err);
+            } else {
+              resolve(res.body);
+            }
+          });
       }, delay);
     });
   }
-
+/*
   static saveBooking(booking) {
     booking = Object.assign({}, booking);
 
@@ -105,6 +80,7 @@ class BookingApi {
       }, delay);
     });
   }
+*/
 }
 
 export default BookingApi;

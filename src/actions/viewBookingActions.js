@@ -7,7 +7,7 @@ export function receiveSingleBooking(booking) {
       type: types.RECEIVE_SINGLE_BOOKING,
       booking: booking
     });
-  }
+  };
 }
 
 export function fetchSingleBooking(bookingId) {
@@ -15,7 +15,7 @@ export function fetchSingleBooking(bookingId) {
     BookingApi.getSingleBooking(bookingId).then(function(booking) {
       dispatch(receiveSingleBooking(booking));
     }, function(error) {
-      console.error(error);
+      console.error(error); // eslint-disable-line no-console
     });
   };
 }

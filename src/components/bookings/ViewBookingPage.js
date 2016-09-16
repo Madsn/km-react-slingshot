@@ -24,7 +24,9 @@ class ViewBookingPage extends React.Component {
 }
 
 ViewBookingPage.propTypes = {
-  booking: PropTypes.object.isRequired
+  booking: PropTypes.object.isRequired,
+  actions: PropTypes.object.isRequired,
+  params: PropTypes.object.isRequired
 };
 
 function mapStateToProps(state) {
